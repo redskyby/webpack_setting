@@ -1,33 +1,39 @@
 module.exports = {
     env: {
         browser: true,
-        node: true,
         es2021: true,
     },
-    extends: ["eslint:recommended", "plugin:@typescript-eslint/recommended", "prettier", "plugin:prettier/recommended"],
-    parser: "@typescript-eslint/parser",
+    extends: [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:react/recommended",
+        "prettier",
+        "plugin:prettier/recommended",
+    ],
     overrides: [
         {
-            files: ["*.ts", "*.tsx"],
-            parser: "@typescript-eslint/parser",
-            parserOptions: {
-                project: "./tsconfig.json",
+            env: {
+                node: true,
             },
-            extends: [
-                "eslint:recommended",
-                "plugin:@typescript-eslint/recommended",
-                "prettier",
-                "plugin:prettier/recommended",
-            ],
+            files: [".eslintrc.{js,cjs}"],
+            parserOptions: {
+                sourceType: "script",
+            },
         },
     ],
+    parser: "@typescript-eslint/parser",
     parserOptions: {
         ecmaVersion: "latest",
         sourceType: "module",
     },
-    plugins: ["@typescript-eslint"],
+    plugins: ["@typescript-eslint", "react"],
     rules: {
         "prettier/prettier": ["warn"],
         "@typescript-eslint/no-unused-vars": "warn",
+    },
+    settings: {
+        react: {
+            version: "detect",
+        },
     },
 };
