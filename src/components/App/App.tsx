@@ -1,11 +1,11 @@
 import React from "react";
-import "./App.scss";
+import classes from "./App.module.scss";
 
 export const App = () => {
     return (
         <div>
             <div>Hello world</div>
-            <button className="myButton">Click me</button>
+            <button className={classes.myButton}>Click me</button>
         </div>
     );
 };
