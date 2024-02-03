@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import classes from "./App.module.scss";
 import { Outlet, Link } from "react-router-dom";
-import About from "@/components/pages/about/About";
 
 export const App = () => {
     const [number, setNumber] = useState<number>(0);
@@ -18,7 +17,6 @@ export const App = () => {
             </button>
             <p>{number}</p>
             <Outlet />
-            <About />
         </div>
     );
 };

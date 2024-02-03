@@ -22,6 +22,8 @@ export function buildPlugins({ mode, paths, analyzer }: BuildOptions): Configura
         );
     }
 
+    //npm run build:prod -- --env analyzer=true
+    //и тогда будет аналитика по размерам
     if (analyzer) {
         plugins.push(new BundleAnalyzerPlugin());
     }
