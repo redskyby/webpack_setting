@@ -1,6 +1,6 @@
 import webpack from "webpack";
 import { buildWebpack } from "./config/buildConfig/buildWebpack";
-import { BuildMode, BuildPaths } from "./config/buildConfig/types/types";
+import { BuildMode, BuildPaths, BuildPlatform } from "./config/buildConfig/types/types";
 import path from "path";
 
 interface EnvVariables {
@@ -8,7 +8,9 @@ interface EnvVariables {
     // npm run start -- --env port=5000
     // можно запускать и так, числом задается любой порт
     port: number;
+    //  npm run build:prod analyzer=true и запуститься analyzer
     analyzer?: boolean;
+    platform: BuildPlatform;
 }
 
 export default (env: EnvVariables) => {
@@ -24,6 +26,7 @@ export default (env: EnvVariables) => {
         mode: env.mode ?? "development",
         paths,
         analyzer: env.analyzer,
+        platform: env.platform ?? "desktop",
     });
 
     return config;

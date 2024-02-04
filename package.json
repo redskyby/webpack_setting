@@ -7,6 +7,8 @@
     "start": "webpack serve -- --env mode=development",
     "build:dev": "webpack --env mode=development",
     "build:prod": "webpack --env mode=production",
+    "build:mobile": "webpack --env mode=production  --env platform=mobile",
+    "build:desktop": "webpack --env mode=production --env platform=desktop",
     "format": "prettier --write \"./**/*.{js,ts,jsx,tsx,scss}\""
   },
   "keywords": [],
