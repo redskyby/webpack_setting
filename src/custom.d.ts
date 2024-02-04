@@ -17,4 +17,8 @@ declare module "*.jpeg" {
     const value: string;
     export = value;
 }
-declare module "*.svg";
+declare module "*.svg" {
+    import React from "react";
+    const SVG: React.FC<React.SVGProps<SVGSVGElement>>;
+    export = SVG;
+}
