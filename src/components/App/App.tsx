@@ -3,7 +3,7 @@ import classes from "./App.module.scss";
 import { Outlet, Link } from "react-router-dom";
 import avatarPng from "@/assets/avatar.png";
 import avatarJpg from "@/assets/avatar.jpg";
-import calendar from "@/assets/calendar.svg";
+import Image from "@/assets/app-image.svg";
 
 export const App = () => {
     const [number, setNumber] = useState<number>(0);
@@ -13,7 +13,10 @@ export const App = () => {
             <div>
                 <img src={avatarPng} alt="AvatarPng" />
                 <img src={avatarJpg} alt="avatarJpg" />
-                <img src={calendar} alt="calendar" />
+            </div>
+            <div>
+                {/*После установленно svgr/webpack с svg можно работать, как с компонентами и передавать туда пропсы*/}
+                <Image className={classes.icon} />
             </div>
             <div>
                 <Link to={"/about"}>about</Link>
