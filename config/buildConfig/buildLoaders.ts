@@ -4,6 +4,11 @@ import { BuildOptions } from "./types/types";
 export function buildLoaders(options: BuildOptions): ModuleOptions["rules"] {
     const isDev: boolean = options.mode === "development";
 
+    const assetsLoader = {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: "asset/resource",
+    };
+
     const cssLoaderWithModule = {
         loader: "css-loader",
         options: {
@@ -31,5 +36,5 @@ export function buildLoaders(options: BuildOptions): ModuleOptions["rules"] {
         exclude: /node_modules/,
     };
 
-    return [scssLoader, tsLoader];
+    return [assetsLoader, scssLoader, tsLoader];
 }
