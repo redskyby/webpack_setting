@@ -12,6 +12,7 @@ export function buildPlugins({ mode, paths, analyzer, platform }: BuildOptions):
         // Тут добавлена глобальная переменная
         new webpack.DefinePlugin({
             __PLATFORM__: JSON.stringify(platform),
+            __ENV__: JSON.stringify(mode),
         }),
     ];
 
