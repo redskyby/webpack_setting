@@ -54,10 +54,19 @@ export function buildLoaders(options: BuildOptions): ModuleOptions["rules"] {
         ],
     };
 
+    // const tsLoader = {
+    //     test: /\.tsx?$/,
+    //     use: "ts-loader",
+    //     exclude: /node_modules/,
+    // };
+
     const tsLoader = {
-        test: /\.tsx?$/,
-        use: "ts-loader",
         exclude: /node_modules/,
+        test: /\.tsx?$/,
+        loader : "ts-loader",
+        options : {
+            transpileOnly : true
+        }
     };
 
     return [assetsLoader, scssLoader, tsLoader, svgLoader];
