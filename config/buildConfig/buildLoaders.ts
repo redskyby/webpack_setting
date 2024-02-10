@@ -72,6 +72,7 @@ export function buildLoaders(options: BuildOptions): ModuleOptions["rules"] {
                 options: {
                     transpileOnly: true,
                     getCustomTransformers: () => ({
+                        // подключение hot module
                         before: [isDev && ReactRefreshTypeScript()].filter(Boolean),
                     }),
                 },
