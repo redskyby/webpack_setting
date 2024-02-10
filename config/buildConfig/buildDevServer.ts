@@ -8,6 +8,6 @@ export function buildDevServer(options: BuildOptions): DevServerConfiguration {
         // Работает только для дев сервера , если через nginx то надо делать проксирование на index.html
         historyApiFallback: true,
         //Включение hmr
-        hot : true
+        hot: true,
     };
 }

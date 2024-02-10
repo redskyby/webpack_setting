@@ -1,7 +1,7 @@
 import { ModuleOptions } from "webpack";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import { BuildOptions } from "./types/types";
-import ReactRefreshTypeScript from 'react-refresh-typescript';
+import ReactRefreshTypeScript from "react-refresh-typescript";
 export function buildLoaders(options: BuildOptions): ModuleOptions["rules"] {
     const isDev: boolean = options.mode === "development";
 
