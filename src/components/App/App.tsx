@@ -25,7 +25,7 @@ export const App = () => {
                 <Link to={"/shop"}>shop</Link>
             </div>
             <button className={classes.myButton} onClick={() => setNumber(number + 1)}>
-                Click me
+                Click me!
             </button>
             <p>{number}</p>
             <Outlet />

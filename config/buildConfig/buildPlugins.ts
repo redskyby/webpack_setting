@@ -5,12 +5,13 @@ import { BuildOptions } from "./types/types";
 import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
 import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
 import ReactRefreshWebpackPlugin from "@pmmmwh/react-refresh-webpack-plugin";
+import path from "path";
 export function buildPlugins({ mode, paths, analyzer, platform }: BuildOptions): Configuration["plugins"] {
     const isDev: boolean = mode === "development";
     const isProud: boolean = mode === "production";
 
     const plugins: Configuration["plugins"] = [
-        new HtmlWebpackPlugin({ template: paths.html }),
+        new HtmlWebpackPlugin({ template: paths.html, favicon: path.resolve(paths.icon, "favicon.png") }),
         // Тут добавлена глобальная переменная
         new webpack.DefinePlugin({
             __PLATFORM__: JSON.stringify(platform),

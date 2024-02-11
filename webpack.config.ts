@@ -18,6 +18,7 @@ export default (env: EnvVariables) => {
         output: path.resolve(__dirname, "build"),
         entry: path.resolve(__dirname, "src", "index.tsx"),
         html: path.resolve(__dirname, "public", "index.html"),
+        icon: path.resolve(__dirname, "public"),
         src: path.resolve(__dirname, "src"),
     };
 
