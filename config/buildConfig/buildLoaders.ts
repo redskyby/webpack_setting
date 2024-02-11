@@ -93,7 +93,7 @@ export function buildLoaders(options: BuildOptions): ModuleOptions["rules"] {
                     [
                         "@babel/preset-react",
                         {
-                            runtime: "automatic",
+                            runtime: isDev ? "automatic" : "classic",
                         },
                     ],
                 ],
